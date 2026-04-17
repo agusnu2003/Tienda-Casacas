@@ -138,4 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render
     renderProducts();
+
+    // Mobile Menu Toggle for Colección
+    const coleccionLink = document.getElementById('coleccion-link');
+    const megaMenu = document.getElementById('mega-menu');
+    
+    if (coleccionLink && megaMenu) {
+        coleccionLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            megaMenu.classList.toggle('show');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!coleccionLink.contains(e.target) && !megaMenu.contains(e.target)) {
+                megaMenu.classList.remove('show');
+            }
+        });
+    }
 });

@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Cambia este número por tu número de WhatsApp real, incluyendo código de país (ej. 549 para Argentina)
-            const phoneNumber = "549115510298";
+            const phoneNumber = "5491156510298";
 
             let message = "¡Hola! Quiero realizar la siguiente compra en AURA:\n\n";
             let total = 0;

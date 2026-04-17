@@ -104,18 +104,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const itemEl = document.createElement('div');
                 itemEl.className = 'cart-item';
+                
+                // Use data attributes and addEventListener to prevent quote breaking issues
                 itemEl.innerHTML = `
                     <div class="cart-item-info">
                         <h4>${displayName}</h4>
                         <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
                     </div>
                     <div class="cart-item-controls">
-                        <button onclick="updateQuantity('${item.id}', -1)">-</button>
+                        <button class="qty-btn minus">-</button>
                         <span>${item.quantity}</span>
-                        <button onclick="updateQuantity('${item.id}', 1)">+</button>
-                        <button class="remove-btn" onclick="removeFromCart('${item.id}')" title="Eliminar">&times;</button>
+                        <button class="qty-btn plus">+</button>
+                        <button class="remove-btn" title="Eliminar">&times;</button>
                     </div>
                 `;
+                
+                // Safely attach event listeners
+                const minusBtn = itemEl.querySelector('.minus');
+                const plusBtn = itemEl.querySelector('.plus');
+                const removeBtn = itemEl.querySelector('.remove-btn');
+                
+                minusBtn.addEventListener('click', () => updateQuantity(item.id, -1));
+                plusBtn.addEventListener('click', () => updateQuantity(item.id, 1));
+                removeBtn.addEventListener('click', () => removeFromCart(item.id));
+
                 cartItemsContainer.appendChild(itemEl);
             });
         }

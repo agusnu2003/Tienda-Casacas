@@ -1,26 +1,4 @@
-// Mock Database for products
-const products = {
-    '1': {
-        name: "Camiseta 'Void' Oversize",
-        price: 45.00,
-        description: "Un diseño minimalista y amplio. Confeccionada en algodón orgánico pesado para una caída perfecta. Ideal para un look urbano y moderno."
-    },
-    '2': {
-        name: "Camiseta 'Neon Pulse'",
-        price: 50.00,
-        description: "Inspirada en las luces de la ciudad de noche. Detalles vibrantes en verde neón sobre un fondo negro profundo."
-    },
-    '3': {
-        name: "Camiseta 'Minimal Core'",
-        price: 35.00,
-        description: "El esencial de cada día. Corte regular, costuras reforzadas y un tejido transpirable que te mantiene cómodo 24/7."
-    },
-    '4': {
-        name: "Camiseta 'Eclipse'",
-        price: 40.00,
-        description: "El equilibrio entre la luz y la sombra. Diseño de doble tono sutil que destaca sin ser demasiado ruidoso."
-    }
-};
+// La variable `products` ahora viene del archivo global `products.js`
 
 let currentProduct = null;
 let selectedSize = null;

@@ -511,10 +511,6 @@ body {
     .hero h1 {
         font-size: 3.5rem;
     }
-    
-    .nav-links {
-        display: none; /* simple mobile hide for now */
-    }
 }
 
 a.product-link {

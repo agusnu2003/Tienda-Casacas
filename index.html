@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | Camisetas Premium</title>
+    <meta name="description" content="Descubre nuestra colección de camisetas exclusivas con diseños únicos.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">AURA<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#collection">Colección</a></li>
+            <li><a href="#about">Nosotros</a></li>
+        </ul>
+        <div class="cart">
+            <button id="cart-btn" class="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cart-badge" class="badge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Eleva tu <span>Pasión</span></h1>
+            <p>La mejor selección de camisetas de fútbol de primera calidad. Desde las leyendas retro que hicieron historia hasta las equipaciones actuales más exclusivas.</p>
+            <button class="cta-btn">Explorar Colección</button>
+        </div>
+        <div class="hero-background">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+    </header>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection">
+        <h2>Últimos Lanzamientos</h2>
+        <div class="grid">
+            
+            <!-- Product Card 1 -->
+            <article class="product-card">
+                <a href="producto.html?id=1" class="product-link">
+                    <div class="product-image-placeholder">
+                        <span>Diseño frontal</span>
+                    </div>
+                </a>
+                <div class="product-info">
+                    <a href="producto.html?id=1" class="product-link"><h3>Camiseta 'Void' Oversize</h3></a>
+                    <div class="price-row">
+                        <span class="price">$45.00</span>
+                        <button class="add-btn add-to-cart-btn" data-name="Camiseta 'Void' Oversize" data-price="45.00">+</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product Card 2 -->
+            <article class="product-card">
+                <a href="producto.html?id=2" class="product-link">
+                    <div class="product-image-placeholder">
+                        <span>Diseño frontal</span>
+                    </div>
+                </a>
+                <div class="product-info">
+                    <a href="producto.html?id=2" class="product-link"><h3>Camiseta 'Neon Pulse'</h3></a>
+                    <div class="price-row">
+                        <span class="price">$50.00</span>
+                        <button class="add-btn add-to-cart-btn" data-name="Camiseta 'Neon Pulse'" data-price="50.00">+</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product Card 3 -->
+            <article class="product-card">
+                <a href="producto.html?id=3" class="product-link">
+                    <div class="product-image-placeholder">
+                        <span>Diseño frontal</span>
+                    </div>
+                </a>
+                <div class="product-info">
+                    <a href="producto.html?id=3" class="product-link"><h3>Camiseta 'Minimal Core'</h3></a>
+                    <div class="price-row">
+                        <span class="price">$35.00</span>
+                        <button class="add-btn add-to-cart-btn" data-name="Camiseta 'Minimal Core'" data-price="35.00">+</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product Card 4 -->
+            <article class="product-card">
+                <a href="producto.html?id=4" class="product-link">
+                    <div class="product-image-placeholder">
+                        <span>Diseño frontal</span>
+                    </div>
+                </a>
+                <div class="product-info">
+                    <a href="producto.html?id=4" class="product-link"><h3>Camiseta 'Eclipse'</h3></a>
+                    <div class="price-row">
+                        <span class="price">$40.00</span>
+                        <button class="add-btn add-to-cart-btn" data-name="Camiseta 'Eclipse'" data-price="40.00">+</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">AURA<span>.</span></div>
+            <p>&copy; 2026 Aura Apparel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

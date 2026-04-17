@@ -2,7 +2,7 @@
 const products = {
     '1': {
         name: "Camiseta Argentina 1986",
-        price: 85.00,
+        price: 55.000,
         description: "La legendaria camiseta que nos llevó a la gloria. Diseño retro exacto con la tecnología de tela de la época. Un pedazo de historia.",
         tipo: "seleccion",
         pais: "ARG",
@@ -11,7 +11,7 @@ const products = {
     },
     '2': {
         name: "Camiseta Argentina 2024",
-        price: 95.00,
+        price: 50.000,
         description: "La piel actual del campeón del mundo. Tejido aerodinámico ultraligero con detalles dorados exclusivos.",
         tipo: "seleccion",
         pais: "ARG",
@@ -20,7 +20,7 @@ const products = {
     },
     '3': {
         name: "Camiseta Boca Juniors 2025",
-        price: 95.00,
+        price: 50.000,
         description: "El nuevo diseño titular para la temporada 2025. Franja amarilla icónica y un azul profundo inconfundible con tecnología de última generación.",
         tipo: "liga",
         pais: "ARG",
@@ -34,7 +34,7 @@ const products = {
     },
     '4': {
         name: "Camiseta River Plate 2024",
-        price: 90.00,
+        price: 50.000,
         description: "La clásica banda roja cruzando el alma. Diseño moderno con tecnología de ventilación avanzada.",
         tipo: "liga",
         pais: "ARG",
@@ -43,7 +43,7 @@ const products = {
     },
     '5': {
         name: "Camiseta Real Madrid 2024",
-        price: 90.00,
+        price: 50.000,
         description: "La blanca impoluta. Elegancia pura.",
         tipo: "liga",
         pais: "ESP",
@@ -52,7 +52,7 @@ const products = {
     },
     '6': {
         name: "Camiseta Brasil 2002",
-        price: 85.00,
+        price: 50.000,
         description: "La magia del Jogo Bonito.",
         tipo: "seleccion",
         pais: "BRA",

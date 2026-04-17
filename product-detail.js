@@ -38,16 +38,64 @@ function renderProductDetails(product) {
     document.getElementById('detail-price').textContent = `$${product.price.toFixed(2)}`;
     document.querySelector('.description').textContent = product.description;
     
+    // Update main image if exists
+    const mainImage = document.getElementById('main-image');
+    if (product.image) {
+        mainImage.innerHTML = `<img src="${product.image}" id="current-main-img" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">`;
+    } else {
+        mainImage.innerHTML = `<span id="main-image-text">Vista Frontal</span>`;
+    }
+    
+    // Update thumbnail strip
+    const thumbnailStrip = document.querySelector('.thumbnail-strip');
+    thumbnailStrip.innerHTML = ''; // Clear existing thumbnails
+    
+    if (product.gallery && Object.keys(product.gallery).length > 0) {
+        let isFirst = true;
+        for (const [label, imgUrl] of Object.entries(product.gallery)) {
+            const thumb = document.createElement('div');
+            thumb.className = `thumbnail ${isFirst ? 'active' : ''}`;
+            thumb.onclick = function() { changeImage(imgUrl, label, this); };
+            
+            // Add a small preview image inside the thumbnail
+            thumb.innerHTML = `<img src="${imgUrl}" alt="${label}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
+            // thumb.textContent = label; // We could add text, but image looks better
+            
+            thumbnailStrip.appendChild(thumb);
+            isFirst = false;
+        }
+    } else {
+        // Fallback to text thumbnails if no gallery
+        thumbnailStrip.innerHTML = `
+            <div class="thumbnail active" onclick="changeImageText('Vista Frontal', this)">Frontal</div>
+            <div class="thumbnail" onclick="changeImageText('Vista Trasera', this)">Trasera</div>
+        `;
+    }
+    
     // Reset size selection when rendering
     selectedSize = null;
     document.getElementById('add-to-cart-main').disabled = true;
     document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
 }
 
-// Global function to change main image
-window.changeImage = function(text, element) {
-    // Change text in the placeholder
-    document.getElementById('main-image-text').textContent = text;
+// Global function to change main image (when using real images)
+window.changeImage = function(imgUrl, label, element) {
+    const mainImg = document.getElementById('current-main-img');
+    if (mainImg) {
+        mainImg.src = imgUrl;
+    }
+    
+    // Update active state on thumbnails
+    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+    element.classList.add('active');
+};
+
+// Global function to change main image (when using placeholder text)
+window.changeImageText = function(text, element) {
+    const textSpan = document.getElementById('main-image-text');
+    if (textSpan) {
+        textSpan.textContent = text;
+    }
     
     // Update active state on thumbnails
     document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));

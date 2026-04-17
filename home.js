@@ -113,11 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const article = document.createElement('article');
                 article.className = 'product-card';
                 
+                const imageHtml = product.image 
+                    ? `<img src="${product.image}" alt="${product.name}" class="product-image">`
+                    : `<div class="product-image-placeholder"><span>${product.name}</span></div>`;
+
                 article.innerHTML = `
                     <a href="producto.html?id=${id}" class="product-link">
-                        <div class="product-image-placeholder">
-                            <span>${product.name}</span>
-                        </div>
+                        ${imageHtml}
                     </a>
                     <div class="product-info">
                         <a href="producto.html?id=${id}" class="product-link"><h3>${product.name}</h3></a>

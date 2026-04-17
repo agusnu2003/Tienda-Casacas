@@ -895,3 +895,52 @@ a.product-link {
 .badge.pop {
     animation: pop 0.3s ease;
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+    
+    .dropdown-parent {
+        position: static; /* Allow mega menu to be full width */
+    }
+    
+    .mega-menu {
+        top: 100%;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        transform: translateY(10px);
+        padding: 1rem;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .dropdown-parent:hover .mega-menu {
+        transform: translateY(0);
+    }
+    
+    .mega-menu-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-select {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
